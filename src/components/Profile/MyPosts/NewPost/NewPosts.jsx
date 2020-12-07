@@ -1,14 +1,17 @@
+import React, { Component } from 'react';
 import s from './NewPosts.module.css';
 
 function NewPosts() {
+    let newPostElement = React.createRef()
+    let newPost = () => alert(newPostElement.current.value)
     return (
             <div className={s.newPost}>
                 Новый пост:
                 <div>
-                    <textarea/>
+                    <textarea ref={newPostElement}></textarea>
                 </div>
                 <div>
-                    <button>Отправить</button>
+                    <button onClick={ newPost }>Отправить</button>
                 </div>
             </div>
     );

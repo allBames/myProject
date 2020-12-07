@@ -1,3 +1,25 @@
 .posts {
     padding: 20px;
 }
+
+.post {
+    display: grid;
+    grid-template-areas: "a m";
+    grid-template-columns: 55px 1fr;
+    padding-bottom: 5px;
+}
+
+.post .avatar {
+    grid-area: a;
+}
+
+.post .message {
+    grid-area: m;
+}
+
+.post img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+}
+

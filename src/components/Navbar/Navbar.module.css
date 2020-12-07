@@ -3,12 +3,3 @@
     background-color: aquamarine;
     padding: 20px;
 }
-
-.item a {
-    color: azure;
-    text-decoration: none;
-}
-
-.item a.active {
-    color: coral;
-}
