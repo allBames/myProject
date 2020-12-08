@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import s from './DialogList.module.css';
 import Dialog from "./Dialog/Dialog";
 import Message from "./Messages/Message";
@@ -6,7 +6,15 @@ import Message from "./Messages/Message";
 function DialogList(props) {
 
     let newMessageElement = React.createRef()
-    let newMessage = () => alert(newMessageElement.current.value)
+
+    let newMessage = () => {
+        props.addMessage()
+    }
+
+    let changeNewMessage = () => {
+        let text = newMessageElement.current.value
+        props.updateNewMessage(text)
+    }
 
     let dialogsElements = props.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id}/>);
     let messagesElements = props.messagesData.map(message => <Message message={message.message}/>);
@@ -20,7 +28,7 @@ function DialogList(props) {
                 {messagesElements}
             </div>
             <div className={s.newMessage}>
-                <textarea ref={newMessageElement}></textarea>
+                <textarea onChange={changeNewMessage} value={props.newTextMessage} ref={newMessageElement}/>
                 <button onClick={newMessage}>Отправить</button>
             </div>
 

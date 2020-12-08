@@ -16,7 +16,10 @@ function App(props) {
             <div className='app-wrapper-content'>
                 <Route path='/dialogs' render={() => <DialogList
                     dialogsData={props.state.dialogsPage.dialogsData}
-                    messagesData={props.state.dialogsPage.messagesData}/>
+                    messagesData={props.state.dialogsPage.messagesData}
+                    addMessage={props.addMessage}
+                    updateNewMessage={props.updateNewMessage}
+                    newTextMessage={props.state.dialogsPage.newTextMessage}/>
                 }/>
                 <Route path='/profile' render={() => <Profile
                     postsData={props.state.profilePage.postsData}

@@ -21,7 +21,8 @@ let state = {
             {id: 2, message: 'Новое сообщение2'},
             {id: 3, message: 'Новое сообщение3'},
             {id: 4, message: 'Новое сообщение4'}
-        ]
+        ],
+        newTextMessage: ['']
     },
     navbar: {
         friends:
@@ -62,6 +63,21 @@ export let addPost = () => {
 export let addNewMessage = (newText) => {
     state.profilePage.newPostMessage = (newText)
     rerender(state);
+}
+
+export let addMessage = () => {
+    let newMessage = {
+        id: 5,
+        message: state.dialogsPage.newTextMessage
+    };
+    state.dialogsPage.messagesData.push(newMessage)
+    state.dialogsPage.newTextMessage = ''
+    rerender(state)
+}
+
+export let updateNewMessage = (newText) => {
+    state.dialogsPage.newTextMessage = (newText)
+    rerender(state)
 }
 
 export default state;
