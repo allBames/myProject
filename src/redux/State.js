@@ -1,4 +1,6 @@
-import {rerender} from "../render";
+let rerender = () => {
+
+}
 
 let state = {
     profilePage: {
@@ -78,6 +80,10 @@ export let addMessage = () => {
 export let updateNewMessage = (newText) => {
     state.dialogsPage.newTextMessage = (newText)
     rerender(state)
+}
+
+export let subscribe = (observer) => {
+    rerender = observer
 }
 
 export default state;
