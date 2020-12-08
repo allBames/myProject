@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import s from './NewPosts.module.css';
 
 function NewPosts(props) {
-
+    debugger
     let newPostElement = React.createRef()
 
     let addPost = () => {
-        props.addPost()
+        props.dispatch({type: 'ADD-POST'})
     }
 
     let changePost = () => {
         let text = newPostElement.current.value
-        props.addNewMessage(text)
+        props.dispatch({type: 'UPDATE-NEW-POST', newText: text})
     }
 
     return (

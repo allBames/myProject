@@ -45,43 +45,42 @@ let store = {
 
         }
     },
+    rerender() {
+        console.log('123')
+    },
+
     getState() {
         return this._state
     },
-    rerender(){
-        console.log('123')
-    },
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostMessage,
-            like: 0
-        };
-        this._state.profilePage.postsData.push(newPost)
-        this._state.profilePage.newPostMessage = ''
-        this.rerender(this._state);
-
-    },
-    addNewMessage(newText) {
-        this._state.profilePage.newPostMessage = (newText)
-        this.rerender(this._state);
-    },
-    addMessage() {
-        let newMessage = {
-            id: 5,
-            message: this._state.dialogsPage.newTextMessage
-        };
-        this._state.dialogsPage.messagesData.push(newMessage)
-        this._state.dialogsPage.newTextMessage = ''
-        this.rerender(this._state)
-    },
-    updateNewMessage(newText) {
-        this._state.dialogsPage.newTextMessage = (newText)
-        this.rerender(this._state)
-    },
     subscribe(observer) {
         this.rerender = observer
+    },
 
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostMessage,
+                like: 0
+            };
+            this._state.profilePage.postsData.push(newPost)
+            this._state.profilePage.newPostMessage = ''
+            this.rerender(this._state);
+        } else if (action.type === 'ADD-MESSAGE') {
+            let newMessage = {
+                id: 5,
+                message: this._state.dialogsPage.newTextMessage
+            };
+            this._state.dialogsPage.messagesData.push(newMessage)
+            this._state.dialogsPage.newTextMessage = ''
+            this.rerender(this._state)
+        } else if (action.type === 'UPDATE-NEW-MESSAGE') {
+            this._state.dialogsPage.newTextMessage = (action.newText)
+            this.rerender(this._state)
+        } else if (action.type === 'UPDATE-NEW-POST') {
+            this._state.profilePage.newPostMessage = (action.newText)
+            this.rerender(this._state);
+        }
     }
 }
 

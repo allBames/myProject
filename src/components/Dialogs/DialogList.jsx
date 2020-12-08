@@ -8,12 +8,14 @@ function DialogList(props) {
     let newMessageElement = React.createRef()
 
     let newMessage = () => {
-        props.addMessage()
+        let action = {type: 'ADD-MESSAGE'};
+        props.dispatch(action)
     }
 
     let changeNewMessage = () => {
         let text = newMessageElement.current.value
-        props.updateNewMessage(text)
+        let action = {type: 'UPDATE-NEW-MESSAGE', newText: text};
+        props.dispatch(action)
     }
 
     let dialogsElements = props.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id}/>);

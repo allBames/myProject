@@ -17,15 +17,14 @@ function App(props) {
                 <Route path='/dialogs' render={() => <DialogList
                     dialogsData={props.state.dialogsPage.dialogsData}
                     messagesData={props.state.dialogsPage.messagesData}
-                    addMessage={props.addMessage}
-                    updateNewMessage={props.updateNewMessage}
-                    newTextMessage={props.state.dialogsPage.newTextMessage}/>
+                    newTextMessage={props.state.dialogsPage.newTextMessage}
+                    dispatch={props.dispatch}
+                    />
                 }/>
                 <Route path='/profile' render={() => <Profile
                     postsData={props.state.profilePage.postsData}
                     newPostMessage={props.state.profilePage.newPostMessage}
-                    addPost={props.addPost}
-                    addNewMessage={props.addNewMessage}/>
+                    dispatch={props.dispatch}/>
                 }/>
                 <Route path='/news' render={() => <News/>}/>
                 <Route path='/music' render={() => <Music/>}/>
