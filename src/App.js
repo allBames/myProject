@@ -20,7 +20,9 @@ function App(props) {
                 }/>
                 <Route path='/profile' render={() => <Profile
                     postsData={props.state.profilePage.postsData}
-                    addPost={props.addPost}/>
+                    newPostMessage={props.state.profilePage.newPostMessage}
+                    addPost={props.addPost}
+                    addNewMessage={props.addNewMessage}/>
                 }/>
                 <Route path='/news' render={() => <News/>}/>
                 <Route path='/music' render={() => <Music/>}/>

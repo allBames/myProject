@@ -10,7 +10,7 @@ function Profile(props) {
                 <img src={'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg'}/>
             </div>
             <MyProfile/>
-            <NewPosts addPost={props.addPost}/>
+            <NewPosts addPost={props.addPost} addNewMessage={props.addNewMessage} newPostMessage={props.newPostMessage}/>
             <MyPosts postsData={props.postsData}/>
         </div>
     );
