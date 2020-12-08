@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import s from './NewPosts.module.css';
 
-function NewPosts() {
+function NewPosts(props) {
+
     let newPostElement = React.createRef()
-    let newPost = () => alert(newPostElement.current.value)
+
+    let addPost = () => {
+        let text = newPostElement.current.value
+        props.addPost(text)
+        newPostElement.current.value = ''
+    }
+
     return (
             <div className={s.newPost}>
                 Новый пост:
@@ -11,7 +18,7 @@ function NewPosts() {
                     <textarea ref={newPostElement}></textarea>
                 </div>
                 <div>
-                    <button onClick={ newPost }>Отправить</button>
+                    <button onClick={ addPost }>Отправить</button>
                 </div>
             </div>
     );

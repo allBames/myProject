@@ -1,3 +1,5 @@
+import {rerender} from "../render";
+
 let state = {
     profilePage: {
         postsData: [
@@ -23,12 +25,34 @@ let state = {
     navbar: {
         friends:
             [
-            {id: 1, name: 'Аня', avatar: 'https://i.pinimg.com/originals/cf/67/b2/cf67b21b83d577a1b5a223a468f8754d.jpg'},
-            {id: 2, name: 'Ваня', avatar: 'https://i.pinimg.com/originals/cf/67/b2/cf67b21b83d577a1b5a223a468f8754d.jpg'},
-            {id: 3, name: 'Миша', avatar: 'https://i.pinimg.com/originals/cf/67/b2/cf67b21b83d577a1b5a223a468f8754d.jpg'}
-        ]
+                {
+                    id: 1,
+                    name: 'Аня',
+                    avatar: 'https://i.pinimg.com/originals/cf/67/b2/cf67b21b83d577a1b5a223a468f8754d.jpg'
+                },
+                {
+                    id: 2,
+                    name: 'Ваня',
+                    avatar: 'https://i.pinimg.com/originals/cf/67/b2/cf67b21b83d577a1b5a223a468f8754d.jpg'
+                },
+                {
+                    id: 3,
+                    name: 'Миша',
+                    avatar: 'https://i.pinimg.com/originals/cf/67/b2/cf67b21b83d577a1b5a223a468f8754d.jpg'
+                }
+            ]
 
     }
+}
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        like: 0
+    };
+    state.profilePage.postsData.push(newPost)
+    rerender(state);
 }
 
 export default state;

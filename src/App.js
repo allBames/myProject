@@ -19,7 +19,8 @@ function App(props) {
                     messagesData={props.state.dialogsPage.messagesData}/>
                 }/>
                 <Route path='/profile' render={() => <Profile
-                    postsData={props.state.profilePage.postsData}/>
+                    postsData={props.state.profilePage.postsData}
+                    addPost={props.addPost}/>
                 }/>
                 <Route path='/news' render={() => <News/>}/>
                 <Route path='/music' render={() => <Music/>}/>
