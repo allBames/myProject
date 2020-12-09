@@ -9,10 +9,11 @@ import Setting from "./components/Setting/Setting";
 import DialogList from "./components/Dialogs/DialogList";
 
 function App(props) {
+    debugger
     return (
         <div className='app-wrapper'>
             <Header/>
-            <Navbar friendsData={props.state.navbar.friends}/>
+            <Navbar friendsData={props.state.sidebar.friends}/>
             <div className='app-wrapper-content'>
                 <Route path='/dialogs' render={() => <DialogList
                     dialogsData={props.state.dialogsPage.dialogsData}
