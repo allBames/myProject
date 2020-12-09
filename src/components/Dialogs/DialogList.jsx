@@ -2,20 +2,19 @@ import React, {Component} from 'react';
 import s from './DialogList.module.css';
 import Dialog from "./Dialog/Dialog";
 import Message from "./Messages/Message";
+import {addMessageActionCreator, changeMessageActionCreator} from "../../redux/DialogReducer";
 
 function DialogList(props) {
 
     let newMessageElement = React.createRef()
 
     let newMessage = () => {
-        let action = {type: 'ADD-MESSAGE'};
-        props.dispatch(action)
+        props.dispatch(addMessageActionCreator())
     }
 
     let changeNewMessage = () => {
         let text = newMessageElement.current.value
-        let action = {type: 'UPDATE-NEW-MESSAGE', newText: text};
-        props.dispatch(action)
+        props.dispatch(changeMessageActionCreator(text))
     }
 
     let dialogsElements = props.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id}/>);
