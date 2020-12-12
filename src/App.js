@@ -7,32 +7,24 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Setting from "./components/Setting/Setting";
 import DialogList from "./components/Dialogs/DialogList";
+import DialogListContainer from "./components/Dialogs/DialogListContainer";
 
 function App(props) {
-    debugger
     return (
         <div className='app-wrapper'>
             <Header/>
-            <Navbar friendsData={props.state.sidebar.friends}/>
-            <div className='app-wrapper-content'>
-                <Route path='/dialogs' render={() => <DialogList
-                    dialogsData={props.state.dialogsPage.dialogsData}
-                    messagesData={props.state.dialogsPage.messagesData}
-                    newTextMessage={props.state.dialogsPage.newTextMessage}
-                    dispatch={props.dispatch}
-                    />
-                }/>
-                <Route path='/profile' render={() => <Profile
-                    postsData={props.state.profilePage.postsData}
-                    newPostMessage={props.state.profilePage.newPostMessage}
-                    dispatch={props.dispatch}/>
-                }/>
-                <Route path='/news' render={() => <News/>}/>
-                <Route path='/music' render={() => <Music/>}/>
-                <Route path='/setting' render={() => <Setting/>}/>
-            </div>
+            <Navbar friendsData={props.store.getState().sidebar.friends}/>
+                <div className='app-wrapper-content'>
+                    <Route path='/dialogs' render={() => <DialogListContainer/>
+                    }/>
+                    <Route path='/profile' render={() => <Profile/>
+                    }/>
+                    <Route path='/news' render={() => <News/>}/>
+                    <Route path='/music' render={() => <Music/>}/>
+                    <Route path='/setting' render={() => <Setting/>}/>
+                </div>
         </div>
-    );
+);
 }
 
 export default App;

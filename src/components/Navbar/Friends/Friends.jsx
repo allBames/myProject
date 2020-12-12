@@ -2,7 +2,6 @@ import s from './Friends.module.css';
 import Friend from "./Friend/Friend";
 
 function Friends(props) {
-    debugger;
 
     let friendsElements = props.friendsData.map(friend => <Friend name={friend.name} avatar={friend.avatar}/>);
 

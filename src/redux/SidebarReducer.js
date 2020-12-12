@@ -20,7 +20,6 @@ let initialState = {
 }
 
 let sidebarReducer = (state = initialState, action) => {
-    debugger;
     switch (action.type) {
         default: return state;
     }
