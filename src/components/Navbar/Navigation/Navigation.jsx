@@ -12,6 +12,9 @@ function Navigation(props) {
                 <NavLink activeClassName={s.active} to='/dialogs'>Диалоги</NavLink>
             </div>
             <div className={s.item}>
+                <NavLink activeClassName={s.active} to='/users'>Люди</NavLink>
+            </div>
+            <div className={s.item}>
                 <NavLink activeClassName={s.active} to='/news'>Новости</NavLink>
             </div>
             <div className={s.item}>
