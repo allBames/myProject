@@ -3,19 +3,6 @@ import {addPostActionCreator, changePostActionCreator} from "../../../../redux/P
 import {connect} from "react-redux";
 import NewPosts from "./NewPosts";
 
-// function NewPostsContainer() {
-
-//     let addPost = () => {
-//         props.dispatch(addPostActionCreator())
-//     }
-//
-//     let changePost = (text) => {
-//         props.dispatch(changePostActionCreator(text))
-//     }
-//
-//     return <NewPosts addPostActionCreator={addPost} changePostActionCreator={changePost} newPostMessage={props.newPostMessage}/>
-//}
-
 let mapStateToProps = (state) => {
     return {
         postsData: state.profilePage.postsData,
