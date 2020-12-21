@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import * as axios from "axios";
 import NoPhoto from './../../assets/img/NoPhoto.png'
 import s from './Users.module.css'
+import {NavLink} from "react-router-dom";
 
 
 let Users = (props) => {
@@ -25,11 +25,10 @@ let Users = (props) => {
         {
             props.users.map(u => <div key={u.id}>
                 <div>
-                    {
-                        u.photos.small
-                            ? <img src={u.photos.small} alt="Аватар"/>
-                            : <img src={NoPhoto} alt="Загрушка"/>
-                    }
+                    <NavLink to={'/profile/' + u.id}>
+                        {u.photos.small ? <img src={u.photos.small} alt="Аватар"/> :
+                            <img src={NoPhoto} alt="Загрушка"/>}
+                    </NavLink>
                     {u.name}
                     {u.status}
                 </div>
