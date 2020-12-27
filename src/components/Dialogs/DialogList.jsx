@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import s from './DialogList.module.css';
 import Dialog from "./Dialog/Dialog";
 import Message from "./Messages/Message";
+import {Redirect} from "react-router-dom";
 
 function DialogList(props) {
 
@@ -18,6 +19,10 @@ function DialogList(props) {
 
     let dialogsElements = props.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id}/>);
     let messagesElements = props.messagesData.map(message => <Message message={message.message}/>);
+
+    if(props.isAuth === false) {
+        return <Redirect to={"./login"}/>
+    }
 
     return (
         <div className={s.dialogList}>

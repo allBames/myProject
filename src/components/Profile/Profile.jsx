@@ -2,8 +2,15 @@ import s from './Profile.module.css';
 import MyProfile from "./MyProfile/MyProfile";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import NewPostsContainer from "./MyPosts/NewPost/NewPostsContainer";
+import {Redirect} from "react-router-dom";
+import React from "react";
 
 function Profile(props) {
+
+    if(props.isAuth === false) {
+        return <Redirect to={"./login"}/>
+    }
+
     return (
         <div>
             <div className={s.picture}>
