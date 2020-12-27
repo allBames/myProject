@@ -2,34 +2,21 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import Users from "./Users";
 import {
-    followUser,
-    setCurrentPage,
-    setTotalUsersCount,
-    setUsers,
-    toggleIsFetching, toggleIsFollowingProgress, unFollowUser,
+    follow,
+    followUser, getUsers,
+    setCurrentPage, toggleIsFollowingProgress, unFollow, unFollowUser,
 } from "../../redux/UsersReducer";
 import Preloader from "../common/preloader/Preloader";
 import {Api} from "../../api/api";
 
 
-
 class UsersContainer extends React.Component {
     componentDidMount() {
-        this.props.toggleIsFetching(true)
-        Api.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-            this.props.setUsers(data.items)
-            this.props.setTotalUsersCount(data.totalCount)
-            this.props.toggleIsFetching(false)
-        })
+        this.props.getUsers(this.props.currentPage, this.props.pageSize)
     }
 
     onPageChanged = (pageNumber) => {
-        this.props.toggleIsFetching(true)
-        this.props.setCurrentPage(pageNumber);
-        Api.getUsers(pageNumber, this.props.pageSize).then(data => {
-            this.props.setUsers(data.items)
-            this.props.toggleIsFetching(false)
-        })
+        this.props.getUsers(pageNumber, this.props.pageSize)
     }
 
     render() {
@@ -43,8 +30,10 @@ class UsersContainer extends React.Component {
                 pageSize={this.props.pageSize}
                 currentPage={this.props.currentPage}
                 users={this.props.users}
-                toggleIsFollowingProgress={this.props.toggleIsFollowingProgress}
-                followingInProgress={this.props.followingInProgress}/>
+                followingInProgress={this.props.followingInProgress}
+                follow={this.props.follow}
+                unFollow={this.props.unFollow}
+            />
         </>
     }
 }
@@ -61,11 +50,11 @@ let mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-    toggleIsFetching,
-    setTotalUsersCount,
     setCurrentPage,
-    setUsers,
     unFollowUser,
     followUser,
-    toggleIsFollowingProgress
+    toggleIsFollowingProgress,
+    getUsers,
+    follow,
+    unFollow
 })(UsersContainer)

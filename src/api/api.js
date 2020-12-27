@@ -17,7 +17,7 @@ export const Api = {
             })
     },
 
-    isFolowerUsers(id, method) {
+    isFollowerUsers(id, method) {
         if (method === 'delete') {
             return instance.delete(`follow/${id}`).then(response => {
                 return response.data
