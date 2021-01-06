@@ -24,21 +24,28 @@ export const Api = {
             })
         } else if (method === 'post') {
             return instance.post(`follow/${id}`).then(response => {
-                return response.data
+                return response
             })
         }
     },
 
-    getProfile(userId){
+    getProfile(userId) {
         return instance.get('profile/' + userId).then(response => {
             return response.data
         })
     },
 
-    getAuthMe(){
+    getAuthMe() {
         return instance.get('auth/me').then(response => {
             return response.data
         })
+    },
+    getStatus(userId) {
+        return instance.get('profile/status/' + userId)
+    },
+
+    updateStatus(status) {
+        return instance.put('profile/status', {status: status})
     }
 }
 

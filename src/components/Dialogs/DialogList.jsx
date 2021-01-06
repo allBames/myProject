@@ -1,26 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
 import s from './DialogList.module.css';
 import Dialog from "./Dialog/Dialog";
 import Message from "./Messages/Message";
 import {Redirect} from "react-router-dom";
+import {Field, reduxForm} from "redux-form";
 
 function DialogList(props) {
 
-    let newMessageElement = React.createRef()
-
-    let newMessage = () => {
-        props.newMessage()
-    }
-
-    let changeNewMessage = () => {
-        let text = newMessageElement.current.value
-        props.changeNewMessage(text)
+    let addNewMessage = (values) => {
+        props.newMessage(values.newMessageBody)
     }
 
     let dialogsElements = props.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id}/>);
     let messagesElements = props.messagesData.map(message => <Message message={message.message}/>);
 
-    if(props.isAuth === false) {
+    if (props.isAuth === false) {
         return <Redirect to={"./login"}/>
     }
 
@@ -32,13 +26,22 @@ function DialogList(props) {
             <div className={s.messages}>
                 {messagesElements}
             </div>
-            <div className={s.newMessage}>
-                <textarea onChange={changeNewMessage} value={props.newTextMessage} ref={newMessageElement}/>
-                <button onClick={newMessage}>Отправить</button>
-            </div>
-
+            <AddMessageFormRedux onSubmit={addNewMessage}/>
         </div>
     );
 }
+
+const addMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div className={s.newMessage}>
+                <Field component={'textarea'} name={'newMessageBody'} pleaseholder={'Введите сообщение'}/>
+                <button>Отправить</button>
+            </div>
+        </form>
+    )
+}
+
+export const AddMessageFormRedux = reduxForm({form: 'dialogAddMessageForm'})(addMessageForm)
 
 export default DialogList;

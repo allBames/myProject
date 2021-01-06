@@ -11,7 +11,7 @@ function MyProfile(props) {
             <div className={s.myProfile}>
                 <div><img src={props.profile.photos.large} alt="фото"/></div>
                 <div>{props.profile.fullName}</div>
-                <ProfileStatus status={"Мой первый проект"}/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             </div>
     );
 }
