@@ -1,29 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import s from './NewPosts.module.css';
+import {Field, reduxForm} from "redux-form";
+import {maxLengthCreator, required} from "../../../../validators/validators";
+import {Textarea} from "../../../common/FormsControl/FormsControl";
+
+const maxLength10 = maxLengthCreator(10)
 
 function NewPosts(props) {
-    let newPostElement = React.createRef()
 
-    let addPost = () => {
-        props.addPost()
-    }
-
-    let changePost = () => {
-        let text = newPostElement.current.value
-        props.changePost(text)
+    let addPost = (values) => {
+        props.addPost(values.newPostBody)
     }
 
     return (
+        <AddNewPostFormFormRedux onSubmit={addPost}/>
+    )
+}
+
+export const addNewPostForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
             <div className={s.newPost}>
-                Новый пост:
+                <Field component={'span'}>Новый пост:</Field>
                 <div>
-                    <textarea onChange={changePost} value={props.newPostMessage} ref={newPostElement}/>
+                    <Field component={Textarea} name={'newPostBody'}
+                           validate={[required, maxLength10]}/>
                 </div>
                 <div>
-                    <button onClick={ addPost }>Отправить</button>
+                    <button>Отправить</button>
                 </div>
             </div>
-    );
+        </form>
+    )
 }
+
+export const AddNewPostFormFormRedux = reduxForm({form: 'newPost'})(addNewPostForm)
 
 export default NewPosts;

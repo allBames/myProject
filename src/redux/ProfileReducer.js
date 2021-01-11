@@ -1,7 +1,6 @@
 import {Api} from "../api/api";
 
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST = 'UPDATE-NEW-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE'
 const SET_STATUS = 'SET_STATUS'
 
@@ -10,7 +9,7 @@ let initialState = {
         {id: 1, message: 'Первый пост', like: 100},
         {id: 2, message: 'Второй пост', like: 200}
     ],
-    newPostMessage: ['Привет, мир!!!'],
+    newPostBody: ['Привет, мир!!!'],
     profile: null,
     status: "111"
 }
@@ -20,19 +19,13 @@ let profileReducer = (state = initialState, action) => {
         case ADD_POST: {
             let newPost = {
                 id: 5,
-                message: state.newPostMessage,
+                message: action.newPostBody,
                 like: 0
             }
             return {
                 ...state,
                 postsData: [...state.postsData, newPost],
                 newPostMessage: ''
-            }
-        }
-        case UPDATE_NEW_POST: {
-            return {
-                ...state,
-                newPostMessage: (action.newText)
             }
         }
         case SET_USER_PROFILE: {
@@ -52,8 +45,7 @@ let profileReducer = (state = initialState, action) => {
     }
 }
 
-export let addPostActionCreator = () => ({type: ADD_POST})
-export let changePostActionCreator = (text) => ({type: UPDATE_NEW_POST, newText: text})
+export let addPostActionCreator = (newPostBody) => ({type: ADD_POST, newPostBody})
 export let setStatus = (status) => ({type: SET_STATUS, status})
 export let setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export let getUserProfile = (userId) => (dispatch) => {

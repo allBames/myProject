@@ -23,6 +23,9 @@ function Navigation(props) {
             <div className={s.item}>
                 <NavLink activeClassName={s.active} to='/setting'>Настройки</NavLink>
             </div>
+            <div className={s.item}>
+                <NavLink activeClassName={s.active} to='/target'>Цели</NavLink>
+            </div>
         </div>
     );
 }
