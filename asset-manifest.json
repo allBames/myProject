@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/myProject/static/css/main.d4bf046e.chunk.css",
+    "main.js": "/myProject/static/js/main.d487ccd0.chunk.js",
+    "main.js.map": "/myProject/static/js/main.d487ccd0.chunk.js.map",
+    "runtime-main.js": "/myProject/static/js/runtime-main.c2b6d142.js",
+    "runtime-main.js.map": "/myProject/static/js/runtime-main.c2b6d142.js.map",
+    "static/js/2.3d344f36.chunk.js": "/myProject/static/js/2.3d344f36.chunk.js",
+    "static/js/2.3d344f36.chunk.js.map": "/myProject/static/js/2.3d344f36.chunk.js.map",
+    "static/css/3.715a3001.chunk.css": "/myProject/static/css/3.715a3001.chunk.css",
+    "static/js/3.eb7fa851.chunk.js": "/myProject/static/js/3.eb7fa851.chunk.js",
+    "static/js/3.eb7fa851.chunk.js.map": "/myProject/static/js/3.eb7fa851.chunk.js.map",
+    "static/css/4.f2356a04.chunk.css": "/myProject/static/css/4.f2356a04.chunk.css",
+    "static/js/4.dc66d552.chunk.js": "/myProject/static/js/4.dc66d552.chunk.js",
+    "static/js/4.dc66d552.chunk.js.map": "/myProject/static/js/4.dc66d552.chunk.js.map",
+    "static/css/5.4413a441.chunk.css": "/myProject/static/css/5.4413a441.chunk.css",
+    "static/js/5.c87c7bf0.chunk.js": "/myProject/static/js/5.c87c7bf0.chunk.js",
+    "static/js/5.c87c7bf0.chunk.js.map": "/myProject/static/js/5.c87c7bf0.chunk.js.map",
+    "static/js/6.17ed9db3.chunk.js": "/myProject/static/js/6.17ed9db3.chunk.js",
+    "static/js/6.17ed9db3.chunk.js.map": "/myProject/static/js/6.17ed9db3.chunk.js.map",
+    "index.html": "/myProject/index.html",
+    "static/css/3.715a3001.chunk.css.map": "/myProject/static/css/3.715a3001.chunk.css.map",
+    "static/css/4.f2356a04.chunk.css.map": "/myProject/static/css/4.f2356a04.chunk.css.map",
+    "static/css/5.4413a441.chunk.css.map": "/myProject/static/css/5.4413a441.chunk.css.map",
+    "static/css/main.d4bf046e.chunk.css.map": "/myProject/static/css/main.d4bf046e.chunk.css.map",
+    "static/js/2.3d344f36.chunk.js.LICENSE.txt": "/myProject/static/js/2.3d344f36.chunk.js.LICENSE.txt",
+    "static/media/preloader.07a3b34f.gif": "/myProject/static/media/preloader.07a3b34f.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c2b6d142.js",
+    "static/js/2.3d344f36.chunk.js",
+    "static/css/main.d4bf046e.chunk.css",
+    "static/js/main.d487ccd0.chunk.js"
+  ]
+}
