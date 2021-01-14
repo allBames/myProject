@@ -6,7 +6,7 @@ function Navbar(props) {
     return (
         <nav className={s.nav}>
             <Navigation/>
-            <Friends friendsData={props.friendsData}/>
+            {/*<Friends friendsData={props.friendsData}/>*/}
         </nav>
     );
 }

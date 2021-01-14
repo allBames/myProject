@@ -7,7 +7,6 @@ import {
     setCurrentPage, toggleIsFollowingProgress, unFollow, unFollowUser,
 } from "../../redux/UsersReducer";
 import Preloader from "../common/preloader/Preloader";
-import {Api} from "../../api/api";
 
 
 class UsersContainer extends React.Component {
