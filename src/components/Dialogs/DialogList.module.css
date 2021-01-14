@@ -1,20 +1,29 @@
 .dialogList {
     display: grid;
+    grid-template-areas:
+            "d m"
+            "d nm";
     grid-template-columns: 2fr 10fr;
 }
 
 .messages {
+    grid-area: m;
     padding: 20px;
 
 }
 
 .dialogs {
+    grid-area: d;
     padding: 20px;
     color: black;
 }
 
 .dialogs .active {
     color: coral;
+}
+
+.newMessage {
+    grid-area: nm;
 }
 
 

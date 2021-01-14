@@ -1,0 +1,15 @@
+.friend {
+    position:relative;
+    text-align: center;
+}
+
+.friendsPreview {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.friendsPreview p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+.friends {
+    padding-top: 50px;
+    position:relative;
+    text-align: center;
+}
+
+.title {
+    grid-area: t;
+}
+
+.friends img {
+    grid-area: f;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    padding: 5px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
