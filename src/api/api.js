@@ -17,16 +17,17 @@ export const Api = {
             })
     },
 
-    isFollowerUsers(id, method) {
-        if (method === 'delete') {
-            return instance.delete(`follow/${id}`).then(response => {
-                return response.data
-            })
-        } else if (method === 'post') {
-            return instance.post(`follow/${id}`).then(response => {
-                return response
-            })
-        }
+    follow(id) {
+        return instance.post(`follow/${id}`).then(response => {
+            return response
+        })
+    },
+
+    unfollow(id) {
+
+        return instance.delete(`follow/${id}`).then(response => {
+            return response.data
+        })
     },
 
     getProfile(userId) {

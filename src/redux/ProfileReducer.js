@@ -11,7 +11,7 @@ let initialState = {
     ],
     newPostBody: ['Привет, мир!!!'],
     profile: null,
-    status: "111"
+    status: ""
 }
 
 let profileReducer = (state = initialState, action) => {
