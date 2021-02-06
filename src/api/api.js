@@ -19,7 +19,7 @@ export const Api = {
 
     follow(id) {
         return instance.post(`follow/${id}`).then(response => {
-            return response
+            return response.data
         })
     },
 

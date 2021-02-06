@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {connect} from "react-redux";
 import MyPosts from "./MyPosts";
 
-let mapStateToProps = (state) => {
-    return {
+let mapStateToProps = (state) => ({
         postsData: state.profilePage.postsData,
-    }
-}
+        profile: state.profilePage.profile
+    })
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-    }
-}
 
-let MyPostsContainer = connect(mapStateToProps, mapDispatchToProps) (MyPosts)
+let MyPostsContainer = connect(mapStateToProps, {}) (MyPosts)
 
 export default MyPostsContainer

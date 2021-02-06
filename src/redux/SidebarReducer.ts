@@ -1,4 +1,14 @@
-let initialState = {
+export type FriendType = {
+    id: number
+    name: string
+    avatar: string
+}
+
+export type InitialStateType = {
+    friends: Array<FriendType>
+}
+
+let initialState: InitialStateType = {
     friends:
         [
             {
@@ -19,7 +29,7 @@ let initialState = {
         ]
 }
 
-let sidebarReducer = (state = initialState, action) => {
+let sidebarReducer = (state = initialState, action: any) => {
     switch (action.type) {
         default: return state;
     }

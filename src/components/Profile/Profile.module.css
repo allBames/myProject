@@ -1,11 +1,49 @@
-.picture {
-    width: 100%;
-    height: 200px;
+.nav {
+    margin: auto;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.04);
 }
 
-.picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 0 0;
+.navCon {
+    float: right;
+    margin: auto;
+    display: flex;
+    height: 50px;
+}
+
+.item {
+    padding-right: 20px;
+    margin-top: 13px;
+    text-transform: uppercase;
+
+}
+
+.item a {
+    color: rgba(0,0,0,0.66);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.item a.active {
+    color: dodgerblue;
+}
+
+.hrProfile {
+    border: none; /* Убираем границу */
+    background-color: dodgerblue;; /* Цвет линии */
+    color: dodgerblue; /* Цвет линии для IE6-7 */
+    margin: 5px 0;
+    padding: 0;
+    height: 0;
+    border-top: 1px dashed  #ddd;
+}
+
+.profileInfo {
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.profilePosts {
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.04);
 }

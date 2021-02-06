@@ -17,10 +17,20 @@ function MyProfile(props) {
 
     return (
             <div className={s.myProfile}>
-                <div><img src={props.profile.photos.large || NoPhoto } alt="фото"/></div>
-                { props.isOwner && <input type="file" onChange={ onMainPhotoSelected }/> }
-                <div>{props.profile.fullName}</div>
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                <label>
+                    <img src={props.profile.photos.large || NoPhoto } alt="фото"/>
+                    { props.isOwner && <input type="file" onChange={ onMainPhotoSelected } hidden/>}
+                </label>
+                <div className={s.profileInfo}>
+                    <div>
+                        <div>{props.profile.fullName}</div>
+                        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
             </div>
     );
 }

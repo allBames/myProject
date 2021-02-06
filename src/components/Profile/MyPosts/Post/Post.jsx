@@ -1,20 +1,32 @@
 import s from './../MyPosts.module.css';
 import {Component} from "react";
+import {connect} from "react-redux";
+import {getUserProfile} from "../../../../redux/ProfileReducer";
+import {compose} from "redux";
+import {withRouter} from "react-router-dom";
 
 class Post extends Component {
 
     shouldComponentUpdate(nextProps, nextState, nextContext) {
-        return nextProps != this.props || nextState != this.state
+        return nextProps !== this.props || nextState !== this.state
     }
 
     render() {
-        console.log("POST")
         return (
             <div className={s.post}>
                 <div className={s.avatar}>
-                    <img src={'https://i.pinimg.com/originals/cf/67/b2/cf67b21b83d577a1b5a223a468f8754d.jpg'}/>
+                    { this.props.profile != null &&
+                        <div>
+                            <img src={this.props.profile.photos.small} alt=""/>
+                        </div>
+                    }
                 </div>
                 <div className={s.message}>
+                    { this.props.profile != null &&
+                        <div>
+                            @<b>{this.props.profile.fullName}</b>
+                        </div>
+                    }
                     <div>
                         {this.props.message}
                     </div>
@@ -27,4 +39,13 @@ class Post extends Component {
     }
 }
 
-export default Post;
+let mapStateToProps = (state) => ({
+    profile: state.profilePage.profile
+})
+
+export default compose(
+    withRouter,
+    connect(mapStateToProps, {getUserProfile}),
+    // withAuthRedirect
+)
+(Post)

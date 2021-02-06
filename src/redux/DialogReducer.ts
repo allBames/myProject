@@ -1,6 +1,22 @@
 const ADD_MESSAGE = 'myProject/dialogsPage/ADD-MESSAGE';
 
-let initialState = {
+export type messageDataType = {
+    id: number
+    message: string
+}
+
+export type dialogDataType = {
+    id: number
+    name: string
+}
+
+export type initialStateType = {
+    dialogsData: Array<dialogDataType>
+    messagesData: Array<messageDataType>
+    newMessageBody: any
+}
+
+let initialState: initialStateType = {
     dialogsData: [
         {id: 1, name: 'Иван'},
         {id: 2, name: 'Антон'},
@@ -17,7 +33,7 @@ let initialState = {
     newMessageBody: ['']
 }
 
-let dialogReducer = (state = initialState, action) => {
+let dialogReducer = (state = initialState, action: any): initialStateType => {
 
     switch (action.type) {
         case ADD_MESSAGE: {
@@ -35,6 +51,10 @@ let dialogReducer = (state = initialState, action) => {
     }
 }
 
-export let addMessageActionCreator = (newMessageBody) => ({type: ADD_MESSAGE, newMessageBody})
+type addMessageActionType = {
+    type: typeof ADD_MESSAGE
+    newMessageBody: string
+}
+export let addMessage = (newMessageBody: string): addMessageActionType => ({type: ADD_MESSAGE, newMessageBody})
 
 export default dialogReducer;

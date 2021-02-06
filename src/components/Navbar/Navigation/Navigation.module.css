@@ -1,8 +1,10 @@
 .item a {
-    color: azure;
+    color: rgba(0,0,0,0.66);
     text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 .item a.active {
-    color: coral;
+    color: dodgerblue;
 }

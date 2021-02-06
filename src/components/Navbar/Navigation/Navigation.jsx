@@ -1,31 +1,37 @@
 import s from './Navigation.module.css';
 import {NavLink} from "react-router-dom";
 
-function Navigation(props) {
+function Navigation() {
 
     return (
         <div>
             <div className={s.item}>
                 <NavLink activeClassName={s.active} to='/profile'>Мой профиль</NavLink>
             </div>
+            <hr/>
             <div className={s.item}>
-                <NavLink activeClassName={s.active} to='/dialogs'>Диалоги</NavLink>
+                <NavLink activeClassName={s.active} to='/dialogs'>Мои диалоги</NavLink>
             </div>
+            <hr/>
+
             <div className={s.item}>
-                <NavLink activeClassName={s.active} to='/users'>Люди</NavLink>
+                <NavLink activeClassName={s.active} to='/music'>Моя музыка</NavLink>
             </div>
+            <hr/>
             <div className={s.item}>
-                <NavLink activeClassName={s.active} to='/news'>Новости</NavLink>
+                <NavLink activeClassName={s.active} to='/frends'>Мои друзья</NavLink>
             </div>
+            <hr/>
             <div className={s.item}>
-                <NavLink activeClassName={s.active} to='/music'>Музыка</NavLink>
+                <NavLink activeClassName={s.active} to='/photos'>Мои фото</NavLink>
             </div>
+            <hr/>
             <div className={s.item}>
-                <NavLink activeClassName={s.active} to='/setting'>Настройки</NavLink>
+                <NavLink activeClassName={s.active} to='/videos'>Мои видео</NavLink>
             </div>
-            <div className={s.item}>
-                <NavLink activeClassName={s.active} to='/target'>Цели</NavLink>
-            </div>
+            <hr/>
+
+
         </div>
     );
 }

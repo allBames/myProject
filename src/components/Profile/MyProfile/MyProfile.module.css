@@ -1,5 +1,19 @@
 .myProfile {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-    padding: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.myProfile img {
+    margin-top:-240px;
+    margin-left:-350px;
+    width: 300px;
+
+    border: 5px solid white;
+    border-radius: 300px;
+
+}
+
+.profileInfo {
+    margin-top: -80px;
+    padding-bottom: 20px;
 }

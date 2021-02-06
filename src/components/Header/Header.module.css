@@ -1,12 +1,32 @@
 .header {
-    grid-area: h;
-    background-color: antiquewhite;
-}
 
-.header img {
-    width: 50px;
+
+    grid-area: h;
+    overflow: hidden;
 }
 
 .loginBlock {
+    padding-right: 15px;
+    padding-left: 15px;
     float: right;
+    margin-top: 12px;
+}
+
+.login {
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.04);
+    height: 50px;
+
+}
+
+.login img {
+    width: 50px;
+}
+
+.wallpaper {
+    margin-top: 5px;
+}
+
+.wallpaper img {
+
 }

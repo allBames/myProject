@@ -9,7 +9,7 @@ const maxLength10 = maxLengthCreator(10)
 function NewPosts(props) {
 
     let addPost = (values) => {
-        props.addPost(values.newPostBody)
+        props.addPost(values.newPostBody, props.userID)
     }
 
     return (
@@ -21,13 +21,12 @@ export const addNewPostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div className={s.newPost}>
-                <Field component={'span'}>Новый пост:</Field>
                 <div>
-                    <Field component={Textarea} name={'newPostBody'}
+                    <Field className={s.ta} component={Textarea} name={'newPostBody'}
                            validate={[required, maxLength10]}/>
                 </div>
                 <div>
-                    <button>Отправить</button>
+                    <button className={s.button}>Добавить пост</button>
                 </div>
             </div>
         </form>
